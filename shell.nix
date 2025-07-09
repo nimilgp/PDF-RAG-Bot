@@ -7,7 +7,8 @@ in pkgs.mkShell {
       chromadb
       sentence-transformers
       streamlit
-      pymupdf
+      #pymupdf
+      pypdf
       langchain-community
     ]))
   ];
