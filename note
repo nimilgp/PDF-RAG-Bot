@@ -2,7 +2,7 @@ Building a LLM Bot to answer questions related to contents of PDF using RAG.
 
 Steps Completed:
 [1] extract text from pdf docs [y]
-[2] break into chunks [n]
+[2] break into chunks [y]
 [3] convert chunks to embeddings [n]
 [4] store embeddings in vector store [n]
 [5] retrieve relavent chunk for query [n]
