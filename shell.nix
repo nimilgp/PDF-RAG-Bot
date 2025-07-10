@@ -9,6 +9,8 @@ in pkgs.mkShell {
       streamlit
       pypdf
       langchain-community
+      langchain-ollama
+      langchain-chroma
     ]))
   ];
 }
