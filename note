@@ -4,6 +4,6 @@ Steps Completed:
 [1] extract text from pdf docs [y]
 [2] break into chunks [y]
 [3] convert chunks to embeddings [y]
-[4] store embeddings in vector store [n]
+[4] store embeddings in vector store [y]
 [5] retrieve relavent chunk for query [n]
 [6] feed user query + relevant chunk  to llm [n]
