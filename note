@@ -6,4 +6,6 @@ Steps Completed:
 [3] convert chunks to embeddings [y]
 [4] store embeddings in vector store [y]
 [5] retrieve relavent chunk for query [y]
-[6] feed user query + relevant chunk  to llm [n]
+[6] feed user query + relevant chunk  to llm [y]
+[7] make vector index to be persistant [n]
+[8] add gui [n]
