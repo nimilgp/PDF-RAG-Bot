@@ -7,5 +7,9 @@ Steps Completed:
 [4] store embeddings in vector store [y]
 [5] retrieve relavent chunk for query [y]
 [6] feed user query + relevant chunk  to llm [y]
-[7] make vector index to be persistant [n]
+[7] make vector index to be persistant [y]
 [8] add gui [n]
+
+extra:
+[1] extract csv
+[2] extract websites
