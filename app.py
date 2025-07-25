@@ -23,4 +23,7 @@ with st.sidebar:
             print(file.name)
             rag.add_pdf_to_vector_store(temp_file.name,vectorStore,file.name)
             os.unlink(temp_file.name)  # Delete temp file
+
+            q = "what is CORS?"
+            rag.querry_the_llm(q, vectorStore)
             

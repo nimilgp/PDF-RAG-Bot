@@ -57,3 +57,33 @@ def add_pdf_to_vector_store(pdf_path, vector_store, original_filename):
         except Exception as e:
             print(f"Failed to process {pdf_path}. Error: {e}")
 
+def querry_the_llm(q,vector_store):
+    print(f"\nQuerying for: '{q}'")
+    context = vector_store.similarity_search(query=q, k=10)
+    print()
+    print(context)
+    system_message_content = "You are a helpful AI assistant. Use the following information to answer the user's question. If the answer is not present in the provided information, state that you don't have enough information."
+    
+    if not context:
+        system_message_content = "No Relevent information found from the pdf knowledge set"
+    else:
+        system_message_content += "\n\nRelevant Information:\n"
+        for i, chunk in enumerate(context):
+            system_message_content += f"Chunk {i+1}: {chunk.page_content}\n"
+
+    try:
+        stream = chat(
+            model='llama3.1:8b',
+            messages=[
+                {'role': 'system', 'content': system_message_content},
+                {'role': 'user', 'content': q}
+            ],
+            stream=True,
+        )
+
+        print("\nResponse:")
+        for chunk in stream:
+            print(chunk['message']['content'], end='', flush=True)
+        print()
+    except Exception as e:
+        print(f"An error occurred while querying the model: {e}")  
